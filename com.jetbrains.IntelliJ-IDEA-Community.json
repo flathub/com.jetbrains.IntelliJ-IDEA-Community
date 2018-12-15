@@ -56,8 +56,8 @@
       "sources": [
         {
           "type": "file",
-          "sha256": "de9f6cfc217ffabc22e6ab3eb690f7ea7da4e2c5fd8f692b821deda567f98c05",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.tar.gz"
+          "sha256": "387a4a55eee6aaac3a82f392c8d675294987b51ce8e91788b04e1218565424fe",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.1.tar.gz"
         },
         {
           "type": "file",
