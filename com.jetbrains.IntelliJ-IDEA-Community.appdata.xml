@@ -11,8 +11,10 @@
       IntelliJ IDEA Community provides all the tools you need for Java, Groovy, Kotlin, Scala, and Android. It offers
       instant and clever code completion, on-the-fly code analysis, and reliable refactoring tools.
     </p>
+    <p>
       Mission-critical tools such as integrated version controls systems and a wide variety of supported languages and
       frameworks are at hand — no plugin hustle included.
+    </p>
     <p>
       IntelliJ IDEA Community can be downloaded at no cost and is open for contributions by community members. The
       product is built on top of the IntelliJ Platform, which is fully open source.
@@ -34,6 +36,7 @@
   <developer_name>JetBrains s.r.o.</developer_name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release type="stable" date="2018-12-17" version="2018.3.2" />
     <release type="stable" date="2018-12-04" version="2018.3.1" />
     <release type="stable" date="2018-11-20" version="2018.3" />
   </releases>
