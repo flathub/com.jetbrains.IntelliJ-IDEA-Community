@@ -25,6 +25,7 @@
         "/bin",
         "/include",
         "/lib/*.la",
+        "/lib/debug",
         "/lib/pkgconfig"
       ],
       "config-opts": [
@@ -56,8 +57,8 @@
       "sources": [
         {
           "type": "file",
-          "sha256": "387a4a55eee6aaac3a82f392c8d675294987b51ce8e91788b04e1218565424fe",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.1.tar.gz"
+          "sha256": "4267a5dac0182e6004700dc9d93c3b8d26e369b7e328d0d6fcbca67d19cfb04e",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.2.tar.gz"
         },
         {
           "type": "file",
@@ -71,7 +72,7 @@
           "type": "script",
           "commands": [
             "ln -s /proc/mounts /etc/mtab",
-            "exec env /app/idea-IC/bin/idea.sh \"$@\""
+            "exec env TMPDIR=${XDG_CACHE_HOME}/tmp/ /app/idea-IC/bin/idea.sh \"$@\""
           ],
           "dest-filename": "idea.sh"
         }
