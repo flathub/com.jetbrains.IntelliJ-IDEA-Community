@@ -37,8 +37,8 @@
       "sources": [
         {
           "type": "archive",
-          "sha256": "f4fa198d4e131f94d9ec84cfeaf6c124245e7ff3c0af11c76cc35332bfae5585",
-          "url": "https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.18.6/libsecret-0.18.6.tar.gz"
+          "sha256": "047a15af3a0eaf3344c10f138fe21561052104abd05d18d85b438e1d002c5ac3",
+          "url": "https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.18.7/libsecret-0.18.7.tar.gz"
         }
       ]
     },
@@ -57,8 +57,8 @@
       "sources": [
         {
           "type": "file",
-          "sha256": "4267a5dac0182e6004700dc9d93c3b8d26e369b7e328d0d6fcbca67d19cfb04e",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.2.tar.gz"
+          "sha256": "15f9676c7807e9f3e462500c5fefd4de543ed5804c588bbb3719dbd94e1d3db1",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.3.tar.gz"
         },
         {
           "type": "file",
