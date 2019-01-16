@@ -1,22 +1,48 @@
 {
   "app-id": "com.jetbrains.IntelliJ-IDEA-Community",
   "command": "idea",
-  "runtime": "org.freedesktop.Sdk",
-  "runtime-version": "18.08",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.30",
   "separate-locales": false,
-  "sdk": "org.freedesktop.Sdk",
-  "finish-args": [
-    "--device=all",
-    "--device=dri",
-    "--env=IDEA_JDK=/app/idea-IC/jre64/",
-    "--env=IDEA_VM_OPTIONS=/app/idea-IC/bin/idea64.vmoptions",
-    "--filesystem=host",
-    "--share=ipc",
-    "--share=network",
-    "--socket=x11",
-    "--talk-name=org.freedesktop.Notifications",
-    "--talk-name=org.freedesktop.secrets"
+  "sdk": "org.gnome.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.openjdk9",
+    "org.freedesktop.Sdk.Extension.openjdk10",
+    "org.freedesktop.Sdk.Extension.openjdk11"
   ],
+  "finish-args" : [
+        "--require-version=0.10.0",
+        "--allow=devel",
+        "--talk-name=org.freedesktop.Flatpak",
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--filesystem=home",
+        "--filesystem=host",
+        "--share=network",
+        "--talk-name=org.gtk.vfs.*",
+        "--system-talk-name=org.freedesktop.PolicyKit1",
+        "--system-talk-name=org.gnome.Sysprof2",
+        "--talk-name=org.gnome.CodeAssist.v1.*",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--system-talk-name=org.freedesktop.Avahi",
+        "--talk-name=org.freedesktop.FileManager1",
+        "--talk-name=org.gnome.SettingsDaemon.Color",
+        "--talk-name=org.freedesktop.PackageKit",
+        "--talk-name=org.freedesktop.secrets",
+        "--filesystem=xdg-run/keyring",
+        "--filesystem=~/.local/share/flatpak",
+        "--filesystem=xdg-data/meson",
+        "--filesystem=/var/lib/flatpak",
+        "--env=G_SLICE=always-malloc"
+],
+"x-run-args" : [
+        "--standalone",
+        "-vvvv"
+],
   "modules": [
     "shared-modules/gtk2/gtk2.json",
     {
