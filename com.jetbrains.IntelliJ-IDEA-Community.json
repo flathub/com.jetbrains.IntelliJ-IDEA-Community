@@ -3,8 +3,8 @@
   "command": "idea",
   "runtime": "org.freedesktop.Sdk",
   "runtime-version": "18.08",
-  "separate-locales": false,
   "sdk": "org.freedesktop.Sdk",
+  "separate-locales": false,
   "finish-args": [
     "--device=all",
     "--device=dri",
@@ -46,19 +46,18 @@
       "name": "idea-ic",
       "buildsystem": "simple",
       "build-commands": [
-        "install -dm0755 /app/idea-IC/",
+        "install -d -m0755 /app/idea-IC/",
         "tar -xzf ideaIC*.tar.gz --directory=/app/idea-IC/ --strip-components=1",
-        "rm -f ideaIC*.tar.gz",
-        "install -Dm0755 idea.sh /app/bin/idea",
-        "install -Dm0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
-        "install -Dm0644 -t /app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
-        "install -Dm0644 -t /app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
+        "install -D -m0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+        "install -D -m0755 idea.sh /app/bin/idea",
+        "install -D -m0644 -t /app/share/applications/ ${FLATPAK_ID}.desktop",
+        "install -D -m0644 -t /app/share/metainfo/ ${FLATPAK_ID}.appdata.xml"
       ],
       "sources": [
         {
           "type": "file",
-          "sha256": "0623c724a9f9742f6958fd802bbd0ed33cd1d87697525ee1f39e4a02ec61be48",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.4.tar.gz"
+          "sha256": "bf756e44b90544e7b991bae325e5da13508d389df35daa7f856e0b56551ea860",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2018.3.5.tar.gz"
         },
         {
           "type": "file",
@@ -70,9 +69,7 @@
         },
         {
           "type": "script",
-          "commands": [
-            "exec env TMPDIR=${XDG_CACHE_HOME}/tmp/ /app/idea-IC/bin/idea.sh \"$@\""
-          ],
+          "commands": ["exec env JAVA_TOOL_OPTIONS=-Djava.io.tmpdir=${XDG_CACHE_HOME}/tmp/ TMPDIR=${XDG_CACHE_HOME}/tmp/ /app/idea-IC/bin/idea.sh \"$@\""],
           "dest-filename": "idea.sh"
         }
       ]
