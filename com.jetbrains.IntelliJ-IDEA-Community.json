@@ -54,8 +54,8 @@
       "sources": [
         {
           "type": "file",
-          "sha256": "2310f9714182e50a881fec4c9d498a04dfbb57f3cd9461383d35014fb1b778dd",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.1.tar.gz"
+          "sha256": "fa2d4229516a49ee776a524cda324c74b12ffb479a703b44c15c84e9c5731faf",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.2.tar.gz"
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
