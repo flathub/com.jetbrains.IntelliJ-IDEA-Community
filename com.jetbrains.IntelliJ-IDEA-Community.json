@@ -2,15 +2,17 @@
   "app-id": "com.jetbrains.IntelliJ-IDEA-Community",
   "command": "idea",
   "runtime": "org.freedesktop.Sdk",
-  "runtime-version": "18.08",
+  "runtime-version": "19.08",
   "sdk": "org.freedesktop.Sdk",
   "separate-locales": false,
   "finish-args": [
     "--device=dri",
     "--env=IDEA_JDK=/app/idea-IC/jre64",
     "--filesystem=host",
+    "--filesystem=xdg-run/keyring",
     "--share=ipc",
     "--share=network",
+    "--socket=ssh-auth",
     "--socket=wayland",
     "--socket=x11",
     "--talk-name=org.freedesktop.Flatpak",
@@ -18,29 +20,7 @@
     "--talk-name=org.freedesktop.secrets"
   ],
   "modules": [
-    "shared-modules/gtk2/gtk2.json",
     {
-      "name": "libsecret",
-      "cleanup": [
-        "/bin",
-        "/include",
-        "/lib/*.la",
-        "/lib/debug",
-        "/lib/pkgconfig"
-      ],
-      "config-opts": [
-        "--disable-gtk-doc",
-        "--disable-manpages",
-        "--disable-static"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "sha256": "33ee5dfd3556931b81d47111890c8b9c51093b4ced18e0e87f51c1769e24d43c",
-          "url": "https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.18.8/libsecret-0.18.8.tar.gz"
-        }
-      ]
-    }, {
       "name": "idea",
       "buildsystem": "simple",
       "build-commands": [
@@ -54,8 +34,8 @@
       "sources": [
         {
           "type": "file",
-          "sha256": "fa2d4229516a49ee776a524cda324c74b12ffb479a703b44c15c84e9c5731faf",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.2.tar.gz"
+          "sha256": "d1a292c16e5fd701ba6f50046afb16bc3722d8ea8510a327b9b6419f4817c43f",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.3.tar.gz"
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
