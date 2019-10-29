@@ -21,37 +21,46 @@
   ],
   "modules": [
     {
+      "name": "libsecret",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dgtk_doc=false",
+        "-Dmanpage=false",
+        "-Dvapi=false"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "commit": "f576dfbe50f9aed22802ad0db0356d081f467d7a",
+          "tag": "0.19.1",
+          "url": "https://gitlab.gnome.org/GNOME/libsecret.git"
+        }
+      ]
+    }, {
       "name": "idea",
       "buildsystem": "simple",
       "build-commands": [
-        "install -d -m0755 /app/idea-IC/",
-        "tar -xzf ideaIC*.tar.gz --directory=/app/idea-IC/ --strip-components=1",
-        "install -D -m0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-        "install -D -m0755 idea.sh /app/bin/idea",
-        "install -D -m0644 -t /app/share/applications/ ${FLATPAK_ID}.desktop",
-        "install -D -m0644 -t /app/share/metainfo/ ${FLATPAK_ID}.appdata.xml"
+        "install --directory --mode=0755 /app/idea-IC/",
+        "tar --gunzip --extract --file=ideaIC*.tar.gz --directory=/app/idea-IC/ --strip-components=1",
+        "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
+        "install -D --mode=0755 entrypoint.sh /app/bin/idea",
+        "install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
+        "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
       ],
       "sources": [
         {
           "type": "file",
-          "sha256": "d1a292c16e5fd701ba6f50046afb16bc3722d8ea8510a327b9b6419f4817c43f",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.3.tar.gz"
+          "path": "entrypoint.sh"
+        }, {
+          "type": "file",
+          "sha256": "f871d4b9b23e0676a653bb9fdf80e8cfb970ddc835b1e7dc2be84dd329ab5b04",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.4.tar.gz"
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.desktop"
-        }, {
-          "type": "script",
-          "commands": [
-            "JAVA_TOOL_OPTIONS=-Djava.io.tmpdir=${XDG_CACHE_HOME}/tmp/",
-            "export JAVA_TOOL_OPTIONS",
-            "TMPDIR=${XDG_CACHE_HOME}/tmp/",
-            "export TMPDIR",
-            "exec env /app/idea-IC/bin/idea.sh \"$@\""
-          ],
-          "dest-filename": "idea.sh"
         }
       ]
     }
