@@ -41,7 +41,7 @@
       "buildsystem": "simple",
       "build-commands": [
         "install --directory --mode=0755 /app/idea-IC/",
-        "tar --directory=/app/idea-IC/ --extract --file=ideaIC-2019.2.4.tar.gz --gunzip --strip-components=1",
+        "tar --directory=/app/idea-IC/ --extract --file=ideaIC-2019.3.tar.gz --gunzip --strip-components=1",
         "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
         "install -D --mode=0755 entrypoint.sh /app/bin/idea",
         "install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
@@ -53,8 +53,8 @@
           "path": "entrypoint.sh"
         }, {
           "type": "file",
-          "sha256": "f871d4b9b23e0676a653bb9fdf80e8cfb970ddc835b1e7dc2be84dd329ab5b04",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2019.2.4.tar.gz"
+          "sha256": "b2ebb30adffbde61cefe63598206b7b0a8e99bc4037130aca2c291c563fd4a60",
+          "url": "https://download.jetbrains.com/idea/ideaIC-2019.3.tar.gz"
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
