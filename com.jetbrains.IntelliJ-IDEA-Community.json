@@ -54,7 +54,11 @@
         }, {
           "type": "file",
           "sha256": "b2ebb30adffbde61cefe63598206b7b0a8e99bc4037130aca2c291c563fd4a60",
-          "url": "https://download.jetbrains.com/idea/ideaIC-2019.3.tar.gz"
+          "url": "https://download.jetbrains.com/idea/ideaIC-2019.3.tar.gz",
+          "x-checker-data": {
+            "type": "jetbrains",
+            "code": "IIC"
+          }
         }, {
           "type": "file",
           "path": "com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
