@@ -40,13 +40,13 @@
                 {
                     "type": "file",
                     "dest-filename": "ideaIC.tar.gz",
-                    "sha256": "8d1e0b359cff49f17c0122422519a5e01676f07dd68070d13e6ed165aec7ee1d",
-                    "url": "https://download.jetbrains.com/idea/ideaIC-2020.1.2.tar.gz",
+                    "sha256": "1a507a7f95b796412e70c3a8e7727987f854235c268b8b682cdca27785d7ccab",
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2020.1.3.tar.gz",
                     "x-checker-data": {
                         "type": "jetbrains",
                         "code": "IIC"
                     },
-                    "size": 640777539
+                    "size": 641212612
                 },
                 {
                     "type": "file",
