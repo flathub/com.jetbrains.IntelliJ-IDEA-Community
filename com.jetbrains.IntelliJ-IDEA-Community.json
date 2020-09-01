@@ -7,7 +7,6 @@
     "separate-locales": false,
     "finish-args": [
         "--device=dri",
-        "--env=IDEA_JDK=/app/idea-IC/jre64",
         "--filesystem=host",
         "--filesystem=xdg-run/keyring",
         "--share=ipc",
