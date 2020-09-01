@@ -2,12 +2,11 @@
     "app-id": "com.jetbrains.IntelliJ-IDEA-Community",
     "command": "idea",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "19.08",
+    "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
     "separate-locales": false,
     "finish-args": [
         "--device=dri",
-        "--env=IDEA_JDK=/app/idea-IC/jre64",
         "--filesystem=host",
         "--filesystem=xdg-run/keyring",
         "--share=ipc",

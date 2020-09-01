@@ -2,9 +2,9 @@
 
 set -o errexit
 
-JAVA_TOOL_OPTIONS=-Djava.io.tmpdir=${XDG_CACHE_HOME}/tmp/
-export JAVA_TOOL_OPTIONS
-TMPDIR=${XDG_CACHE_HOME}/tmp/
+IDEA_JDK="/app/idea-IC/jre64"
+export IDEA_JDK
+TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
 export TMPDIR
 
 exec env /app/idea-IC/bin/idea.sh "$@"
