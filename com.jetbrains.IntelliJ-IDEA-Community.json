@@ -14,10 +14,6 @@
         "--socket=x11",
 	"--filesystem=~/IdeaProjects:create",
         "--filesystem=xdg-cache/tmp:create",
-        "--filesystem=xdg-cache/log:create",
-        "--filesystem=xdg-data/plugins:create",
-        "--filesystem=xdg-data/system:create",
-        "--filesystem=xdg-data/config:create",
         "--filesystem=xdg-data/.m2:create",
         "--filesystem=xdg-run/keyring",
         "--talk-name=org.freedesktop.Flatpak",
@@ -39,7 +35,6 @@
                 "tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1",
                 "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
                 "install -D --mode=0755 entrypoint.sh /app/bin/idea",
-		"install -D --mode=0644 idea.properties /app/bin/idea.properties",
 		"install -D --mode=0644 settings.xml /app/idea-IC/plugins/maven/lib/maven3/conf",
 		"chmod +x /app/idea-IC/plugins/maven/lib/maven3/bin/mvn",
                 "install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
@@ -60,10 +55,6 @@
                         "code": "IIC"
                     },
                     "size": 679038454
-                },
-		{
-                    "type": "file",
-                    "path": "idea.properties"
                 },
 		{
 		    "type": "file",
