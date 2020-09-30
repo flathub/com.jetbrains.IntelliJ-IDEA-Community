@@ -38,7 +38,6 @@
                 "tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1",
                 "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
                 "install -D --mode=0755 entrypoint.sh /app/bin/idea",
-		"chmod +x /app/idea-IC/plugins/maven/lib/maven3/bin/mvn",
                 "install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
                 "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
             ],
