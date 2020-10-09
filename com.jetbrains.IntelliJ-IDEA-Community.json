@@ -36,7 +36,6 @@
             "build-commands": [
                 "install --directory --mode=0755 /app/idea-IC/",
                 "tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1",
-		"sed -i 's/-Didea.jre.check=true//g' /app/idea-IC/bin/idea.sh",
                 "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
                 "install -D --mode=0755 entrypoint.sh /app/bin/idea",
 		"install -D --mode=0644 idea64.vmoptions /app/bin/idea64.vmoptions",
