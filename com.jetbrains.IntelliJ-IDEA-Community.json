@@ -16,7 +16,8 @@
         "--socket=x11",
         "--talk-name=org.freedesktop.Flatpak",
         "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=org.freedesktop.secrets"
+        "--talk-name=org.freedesktop.secrets",
+        "--env=LD_LIBRARY_PATH=/app/lib/"
     ],
     "modules": [
         "shared-modules/libsecret/libsecret.json",
@@ -29,7 +30,8 @@
                 "install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg",
                 "install -D --mode=0755 entrypoint.sh /app/bin/idea",
                 "install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop",
-                "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.appdata.xml"
+                "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.appdata.xml",
+                "ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so /app/lib/libtinfo.so.5"
             ],
             "sources": [
                 {
