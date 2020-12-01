@@ -1,8 +1,7 @@
----
 app-id: com.jetbrains.IntelliJ-IDEA-Community
 command: idea
 runtime: org.freedesktop.Sdk
-runtime-version: "20.08"
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args:
@@ -34,9 +33,9 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: cb7faf2b01c875947ccc90cf243497328101c63c079146763724328355009ce6
-        size: 679072530
-        url: https://download.jetbrains.com/idea/ideaIC-2020.2.4.tar.gz
+        sha256: c6f78b72cf7b82619685651ae8517c3faf983dc558c4d4f4c171801ab8d43674
+        size: 738387806
+        url: https://download.jetbrains.com/idea/ideaIC-2020.3.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
