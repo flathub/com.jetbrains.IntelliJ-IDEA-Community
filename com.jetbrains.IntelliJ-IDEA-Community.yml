@@ -32,7 +32,7 @@ modules:
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk11/installjdk.sh
-    
+
   - name: gcr
     cleanup:
       - /include
