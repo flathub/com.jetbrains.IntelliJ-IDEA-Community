@@ -24,10 +24,12 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
 modules:
   - shared-modules/libsecret/libsecret.json
+
   - name: openjdk
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk11/installjdk.sh
+
   - name: idea
     buildsystem: simple
     build-commands:
@@ -35,7 +37,6 @@ modules:
       - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
       - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0755 entrypoint.sh /app/bin/idea
-      - install -D --mode=0644 idea64.vmoptions /app/bin/idea64.vmoptions
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
     sources:
@@ -48,8 +49,6 @@ modules:
         x-checker-data:
           code: IIC
           type: jetbrains
-      - type: file
-        path: idea64.vmoptions
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
       - type: file
