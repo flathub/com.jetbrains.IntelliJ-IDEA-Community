@@ -1,24 +1,25 @@
 app-id: com.jetbrains.IntelliJ-IDEA-Community
 command: idea
 runtime: org.freedesktop.Sdk
-runtime-version: '20.08'
+runtime-version: "20.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
 separate-locales: false
 finish-args:
+  - --allow=devel
   - --device=dri
+  - --filesystem=~/.gradle
+  - --filesystem=~/.java
+  - --filesystem=~/.m2
+  - --filesystem=~/.gitconfig
+  - --filesystem=~/IdeaProjects:create
+  - --filesystem=xdg-cache/tmp:create
+  - --filesystem=xdg-run/keyring
   - --share=ipc
   - --share=network
   - --socket=ssh-auth
   - --socket=x11
-  - --filesystem=~/IdeaProjects:create
-  - --filesystem=xdg-cache/tmp:create
-  - --filesystem=~/.m2
-  - --filesystem=~/.gradle
-  - --filesystem=~/.java
-  - --filesystem=~/.gitconfig
-  - --filesystem=xdg-run/keyring
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
@@ -37,6 +38,7 @@ modules:
       - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
       - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0755 entrypoint.sh /app/bin/idea
+      - printf "\n-Djava.io.tmpdir=/var/cache/tmp\n" >> /app/idea-IC/bin/idea64.vmoptions
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
     sources:
@@ -44,8 +46,8 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 06abca33b240b24f447dada437f5ce7387b47644c76378230254d6163882a42a
-        url: https://download.jetbrains.com/idea/ideaIC-2020.3.1.tar.gz
+        sha256: 2db84ef019da6157d544c43d780901d6178bd029ce686267eec9ac23e2ae727e
+        url: https://download.jetbrains.com/idea/ideaIC-2020.3.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
