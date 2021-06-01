@@ -23,18 +23,18 @@ modules:
 
   - name: gcr
     cleanup:
-      - "/include"
-      - "/lib/debug"
-      - "/lib/girepository-1.0"
-      - "/lib/pkgconfig"
-      - "/man"
-      - "/share/gir-1.0"
-      - "/share/gtk-doc"
-      - "/share/doc"
-      - "/share/man"
-      - "/share/pkgconfig"
-      - "*.a"
-      - "*.la"
+      - /include
+      - /lib/debug
+      - /lib/girepository-1.0
+      - /lib/pkgconfig
+      - /man
+      - /share/gir-1.0
+      - /share/gtk-doc
+      - /share/doc
+      - /share/man
+      - /share/pkgconfig
+      - '*.a'
+      - '*.la'
     config-opts:
       - --disable-schemas-compile
       - --disable-static
@@ -53,11 +53,11 @@ modules:
 
   - name: pinentry
     cleanup:
-      - "/include"
-      - "/lib/debug"
-      - "/share/info"
-      - "*.a"
-      - "*.la"
+      - /include
+      - /lib/debug
+      - /share/info
+      - '*.a'
+      - '*.la'
     config-opts:
       - --disable-fallback-curses
       - --disable-ncurses
@@ -90,8 +90,8 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 8505ba8ff24f595654b82eb45c1fa2f0530a6f307b25cd9858a4bf796e0a5ee9
-        url: https://download.jetbrains.com/idea/ideaIC-2021.1.1.tar.gz
+        sha256: e2517d79b39581f1548ca4119cb2fa478505cf73203d97b4f3292f05ae71250e
+        url: https://download.jetbrains.com/idea/ideaIC-2021.1.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
