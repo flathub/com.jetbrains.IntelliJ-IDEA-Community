@@ -9,6 +9,7 @@ finish-args:
   - --filesystem=host
   - --filesystem=xdg-run/gnupg:ro
   - --filesystem=xdg-run/keyring
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
   - --share=network
   - --socket=ssh-auth
