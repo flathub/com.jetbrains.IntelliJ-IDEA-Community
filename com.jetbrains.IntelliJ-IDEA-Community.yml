@@ -3,31 +3,80 @@ command: idea
 runtime: org.freedesktop.Sdk
 runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.openjdk11
 separate-locales: false
 finish-args:
   - --device=dri
+  - --filesystem=host
+  - --filesystem=xdg-run/gnupg:ro
+  - --filesystem=xdg-run/keyring
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
   - --share=network
   - --socket=ssh-auth
+  - --socket=wayland
   - --socket=x11
-  - --filesystem=~/IdeaProjects:create
-  - --filesystem=xdg-cache/tmp:create
-  - --filesystem=~/.m2
-  - --filesystem=~/.gradle
-  - --filesystem=~/.java
-  - --filesystem=~/.gitconfig
-  - --filesystem=xdg-run/keyring
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.gnome.keyring.SystemPrompter
 modules:
   - shared-modules/libsecret/libsecret.json
-  - name: openjdk
+
+  - name: gcr
+    cleanup:
+      - /include
+      - /lib/debug
+      - /lib/girepository-1.0
+      - /lib/pkgconfig
+      - /man
+      - /share/gir-1.0
+      - /share/gtk-doc
+      - /share/doc
+      - /share/man
+      - /share/pkgconfig
+      - '*.a'
+      - '*.la'
+    config-opts:
+      - --disable-schemas-compile
+      - --disable-static
+      - --disable-update-mime
+      - --disable-vala
+      - --enable-valgrind=no
+    sources:
+      - type: archive
+        sha256: 29df50974a90987af694c0fb8926a6b366e68cacd8abd813817cfe1eb5d54524
+        url: https://download.gnome.org/sources/gcr/3.34/gcr-3.34.0.tar.xz
+
+  - name: openssh
     buildsystem: simple
     build-commands:
-      - /usr/lib/sdk/openjdk11/installjdk.sh
+      - ln --symbolic /usr/bin/ssh /app/bin/ssh
+
+  - name: pinentry
+    cleanup:
+      - /include
+      - /lib/debug
+      - /share/info
+      - '*.a'
+      - '*.la'
+    config-opts:
+      - --disable-fallback-curses
+      - --disable-ncurses
+      - --disable-pinentry-curses
+      - --disable-pinentry-emacs
+      - --disable-pinentry-fltk
+      - --disable-pinentry-gtk2
+      - --disable-pinentry-qt5
+      - --disable-pinentry-tqt
+      - --disable-pinentry-tty
+      - --enable-libsecret=no
+      - --enable-pinentry-gnome3
+      - --without-libcap
+    sources:
+      - type: archive
+        sha256: cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f
+        url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2
+
   - name: idea
     buildsystem: simple
     build-commands:
@@ -35,7 +84,6 @@ modules:
       - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
       - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0755 entrypoint.sh /app/bin/idea
-      - install -D --mode=0644 idea64.vmoptions /app/bin/idea64.vmoptions
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
     sources:
@@ -43,13 +91,11 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 06abca33b240b24f447dada437f5ce7387b47644c76378230254d6163882a42a
-        url: https://download.jetbrains.com/idea/ideaIC-2020.3.1.tar.gz
+        sha256: e2517d79b39581f1548ca4119cb2fa478505cf73203d97b4f3292f05ae71250e
+        url: https://download.jetbrains.com/idea/ideaIC-2021.1.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
-      - type: file
-        path: idea64.vmoptions
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
       - type: file
