@@ -29,10 +29,10 @@ modules:
   - shared-modules/libsecret/libsecret.json
 
   - name: openjdk
-      buildsystem: simple
-      build-commands:
-        - /usr/lib/sdk/openjdk11/installjdk.sh
-        -
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk11/installjdk.sh
+    
   - name: gcr
     cleanup:
       - /include
