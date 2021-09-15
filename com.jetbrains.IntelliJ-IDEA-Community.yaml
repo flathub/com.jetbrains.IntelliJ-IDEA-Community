@@ -5,22 +5,23 @@ runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.openjdk11
+  - org.freedesktop.Sdk.Extension.openjdk
 separate-locales: false
 finish-args:
   - --device=dri
-  - --filesystem=~/.gradle
-  - --filesystem=~/.java
-  - --filesystem=~/.m2
-  - --filesystem=~/.gitconfig
-  - --filesystem=~/IdeaProjects:create
-  - --filesystem=xdg-cache/tmp:create
-  - --filesystem=xdg-run/gnupg:ro
-  - --filesystem=xdg-run/keyring
-  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=ipc
   - --share=network
   - --socket=ssh-auth
   - --socket=x11
+  - --filesystem=~/IdeaProjects:create
+  - --filesystem=xdg-cache/tmp:create
+  - --filesystem=~/.m2
+  - --filesystem=~/.gradle
+  - --filesystem=~/.java
+  - --filesystem=~/.gitconfig
+  - --filesystem=xdg-run/gnupg:ro
+  - --filesystem=xdg-run/keyring
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
@@ -29,6 +30,11 @@ modules:
   - shared-modules/libsecret/libsecret.json
 
   - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk/installjdk.sh
+
+  - name: openjdk11
     buildsystem: simple
     build-commands:
       - /usr/lib/sdk/openjdk11/installjdk.sh
@@ -95,7 +101,6 @@ modules:
       - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
       - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0755 entrypoint.sh /app/bin/idea
-      - printf "\n-Djava.io.tmpdir=/var/cache/tmp\n" >> /app/idea-IC/bin/idea64.vmoptions
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
     sources:
