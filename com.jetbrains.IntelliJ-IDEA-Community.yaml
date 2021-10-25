@@ -6,7 +6,6 @@ sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args:
   - --device=all
-  - --device=dri
   - --filesystem=host
   - --filesystem=xdg-run/gnupg:ro
   - --filesystem=xdg-run/keyring
