@@ -37,6 +37,7 @@
   <update_contact>community-support@jetbrains.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2021.3.2" date="2022-01-28"/>
     <release version="2021.3.1" date="2021-12-29"/>
     <release version="2021.3" date="2021-11-30"/>
     <release version="2021.2.3" date="2021-10-15"/>
