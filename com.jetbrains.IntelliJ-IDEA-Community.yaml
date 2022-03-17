@@ -91,8 +91,8 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 99e2225846d118e3190023abc65c8b2c62a1d1463f601c79a20b9494c54a08c9
-        url: https://download.jetbrains.com/idea/ideaIC-2021.3.2.tar.gz
+        sha256: 38ba4721d459efc55b83bbffdcd3888b2eb9d98ef3226967fb05ffc5fbcc96e5
+        url: https://download.jetbrains.com/idea/ideaIC-2021.3.3.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
