@@ -78,6 +78,13 @@ modules:
         sha256: cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f
         url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2
 
+  - name: xrandr
+    buildsystem: autotools
+    sources:
+      - type: archive
+        sha256: 7bc76daf9d72f8aff885efad04ce06b90488a1a169d118dea8a2b661832e8762
+        url: https://xorg.freedesktop.org/archive/individual/app/xrandr-1.5.1.tar.xz
+
   - name: idea
     buildsystem: simple
     build-commands:
@@ -101,10 +108,3 @@ modules:
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-  - name: xrandr
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url: https://xorg.freedesktop.org/archive/individual/app/xrandr-1.5.1.tar.xz
-        sha256: 7bc76daf9d72f8aff885efad04ce06b90488a1a169d118dea8a2b661832e8762
-    cleanup: [/share/man, /bin/xkeystone]
