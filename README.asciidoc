@@ -27,4 +27,14 @@ $ flatpak uninstall --unused --user
 $ flatpak remote-delete --user flathub
 ----
 
+== Permissions
+
+This application requests the following permissions:
+
+* `device=all` because there are plugins that use the camera, people develop for certain controllers, etc.
+* `filesystems=host` because you can have anything installed in your system and would like to be able to use it as before
+* `sockets=ssh-auth` because (ideally) most developers use git using the Secure Shell Protocol
+
+The rest are hopefully innocent or obvious enough to not require explanation!
+
 // git submodule foreach git pull origin master
