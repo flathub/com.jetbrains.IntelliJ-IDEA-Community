@@ -1,7 +1,7 @@
 app-id: com.jetbrains.IntelliJ-IDEA-Community
 command: idea
 runtime: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args:
@@ -92,8 +92,8 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 93eb9391a898aad164ca47965e0445cbf0f04d7062b6875c4e4a3136799ee6cf
-        url: https://download.jetbrains.com/idea/ideaIC-2022.2.1.tar.gz
+        sha256: c16fcdb1c6d72369642b98b9425eae932834b17687ea231204b30ed813333aff
+        url: https://download.jetbrains.com/idea/ideaIC-2022.2.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
