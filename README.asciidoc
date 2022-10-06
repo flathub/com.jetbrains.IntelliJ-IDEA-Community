@@ -38,3 +38,8 @@ This application requests the following permissions:
 The rest are hopefully innocent or obvious enough to not require explanation!
 
 // git submodule foreach git pull origin master
+
+== Restricting the default permissions
+:flatseal-flathub: https://flathub.org/apps/details/com.github.tchx84.Flatseal
+
+When using {flatseal-flathub}[Flatseal] or `flatpak override` to restrict the default filesystem access, it is recommended to add `.java` as persistent (`--persist`) to avoid accepting the license for each launch.
