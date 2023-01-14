@@ -125,7 +125,6 @@ modules:
         x-checker-data:
           code: IIC
           type: jetbrains
-          arch: aarch64
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
       - type: file
