@@ -79,6 +79,8 @@ modules:
         url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2
 
   - name: idea
+    only-arches:
+      - x86_64
     buildsystem: simple
     build-commands:
       - install --directory --mode=0755 /app/idea-IC/
@@ -97,6 +99,33 @@ modules:
         x-checker-data:
           code: IIC
           type: jetbrains
+      - type: file
+        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
+      - type: file
+        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
+
+  - name: idea-arm64
+    only-arches:
+      - aarch64
+    buildsystem: simple
+    build-commands:
+      - install --directory --mode=0755 /app/idea-IC/
+      - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
+      - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
+      - install -D --mode=0755 entrypoint.sh /app/bin/idea
+      - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
+      - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
+    sources:
+      - type: file
+        path: entrypoint.sh
+      - type: file
+        dest-filename: ideaIC.tar.gz
+        sha256: cbd25b7e80f9b0b16574b2baee674df596fd6bdafac3fc51ae12fb0ed2836eac
+        url: https://download.jetbrains.com/idea/ideaIC-2022.3.1-aarch64.tar.gz
+        x-checker-data:
+          code: IIC
+          type: jetbrains
+          arch: aarch64
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
       - type: file
