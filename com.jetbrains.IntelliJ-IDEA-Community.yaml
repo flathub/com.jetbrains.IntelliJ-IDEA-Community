@@ -87,8 +87,6 @@ modules:
       - install -D --mode=0755 entrypoint.sh /app/bin/idea
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-    only-arches:
-      - x86_64
     sources:
       - type: file
         path: entrypoint.sh
@@ -96,32 +94,6 @@ modules:
         dest-filename: ideaIC.tar.gz
         sha256: 02bc35281eb4e1285eeb9d797ec2b31ec7370e320ad0e89f6f1fa704d78ec4bf
         url: https://download.jetbrains.com/idea/ideaIC-2022.3.2.tar.gz
-        x-checker-data:
-          code: IIC
-          type: jetbrains
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-
-  - name: idea-arm64
-    buildsystem: simple
-    build-commands:
-      - install --directory --mode=0755 /app/idea-IC/
-      - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
-      - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
-      - install -D --mode=0755 entrypoint.sh /app/bin/idea
-      - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
-      - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-    only-arches:
-      - aarch64
-    sources:
-      - type: file
-        path: entrypoint.sh
-      - type: file
-        dest-filename: ideaIC.tar.gz
-        sha256: 70eb13c0ca0e97f9c8575ff6b2b758afec249f58ad7ddf3149b6e310aea1e07e
-        url: https://download.jetbrains.com/idea/ideaIC-2022.3.2-aarch64.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
