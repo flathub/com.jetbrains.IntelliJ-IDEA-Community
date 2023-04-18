@@ -98,7 +98,7 @@ modules:
     buildsystem: meson
     config-opts:
       - -Deditor_binary=/app/extra/idea-IU/bin/idea.sh
-      - -Deditor_title=Intellij IDEA Ultimate
+      - -Deditor_title=Intellij IDEA Community
       - -Dprogram_name=idea
     sources:
       - type: dir
