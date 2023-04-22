@@ -6,6 +6,6 @@ Icon=com.jetbrains.IntelliJ-IDEA-Community
 Keywords=development;idea;ide;intellij;java;
 Name=IntelliJ IDEA Community
 StartupNotify=true
-StartupWMClass=jetbrains-idea-ce
+StartupWMClass=jetbrains-idea-community
 Terminal=false
 Type=Application
