@@ -1,24 +1,23 @@
 app-id: com.jetbrains.IntelliJ-IDEA-Community
 command: idea
 finish-args:
+  - --allow=devel
   - --device=all
-  - --filesystem=host
-  - --filesystem=xdg-run/gnupg:ro
-  - --filesystem=xdg-run/keyring
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/gnupg:ro
+  - --filesystem=host
+  - --filesystem=xdg-run/keyring
   - --share=ipc
   - --share=network
   - --socket=ssh-auth
   - --socket=wayland
   - --socket=x11
+  - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.gnome.keyring.SystemPrompter
-  - --talk-name=com.canonical.AppMenu.Registrar
 modules:
-  - shared-modules/libsecret/libsecret.json
-
   - name: gcr
     cleanup:
       - /include
@@ -43,6 +42,18 @@ modules:
       - type: archive
         sha256: 29df50974a90987af694c0fb8926a6b366e68cacd8abd813817cfe1eb5d54524
         url: https://download.gnome.org/sources/gcr/3.34/gcr-3.34.0.tar.xz
+
+  - name: jetbrains-flatpak-wrapper
+    buildsystem: meson
+    config-opts:
+      - -Deditor_binary=/app/ideaIC/bin/idea.sh
+      - -Dprogram_name=idea
+      - -Deditor_title=IntelliJ IDEA Community
+    sources:
+      - type: dir
+        path: jetbrains-flatpak-wrapper
+
+  - shared-modules/libsecret/libsecret.json
 
   - name: openssh
     buildsystem: simple
@@ -97,15 +108,19 @@ modules:
   - name: idea
     buildsystem: simple
     build-commands:
-      - install --directory --mode=0755 /app/idea-IC/
-      - tar --directory=/app/idea-IC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
-      - install -D --mode=0644 /app/idea-IC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
-      - install -D --mode=0755 entrypoint.sh /app/bin/idea
+      - install --directory --mode=0755 /app/ideaIC/
+      - tar --directory=/app/ideaIC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
+      - install -D --mode=0644 /app/ideaIC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
+      - tee < idea.properties --append /app/ideaIC/bin/idea.properties
     sources:
       - type: file
-        path: entrypoint.sh
+        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
+      - type: file
+        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
+      - type: file
+        path: idea.properties
       - type: file
         dest-filename: ideaIC.tar.gz
         sha256: e6fe45c9df8e763ee3278444b5fb1003910c436752e83221e0303a62c5e81eaa
@@ -113,10 +128,6 @@ modules:
         x-checker-data:
           code: IIC
           type: jetbrains
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
 
 runtime: org.freedesktop.Sdk
 runtime-version: '22.08'
