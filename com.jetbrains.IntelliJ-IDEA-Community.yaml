@@ -3,6 +3,7 @@ command: idea
 finish-args:
   - --allow=devel
   - --device=all
+  - --env=IDEA_PROPERTIES=/app/bin/idea.properties
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --filesystem=xdg-run/gnupg:ro
   - --filesystem=host
@@ -46,9 +47,9 @@ modules:
   - name: jetbrains-flatpak-wrapper
     buildsystem: meson
     config-opts:
-      - -Deditor_binary=/app/ideaIC/bin/idea.sh
-      - -Dprogram_name=idea
+      - -Deditor_binary=/app/IDEA-C/bin/idea.sh
       - -Deditor_title=IntelliJ IDEA Community
+      - -Dprogram_name=idea
     sources:
       - type: dir
         path: jetbrains-flatpak-wrapper
@@ -108,12 +109,12 @@ modules:
   - name: idea
     buildsystem: simple
     build-commands:
-      - install --directory --mode=0755 /app/ideaIC/
-      - tar --directory=/app/ideaIC/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
-      - install -D --mode=0644 /app/ideaIC/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
+      - install --directory --mode=0755 /app/IDEA-C/
+      - tar --directory=/app/IDEA-C/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
+      - install -D --mode=0644 /app/IDEA-C/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
       - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-      - tee < idea.properties --append /app/ideaIC/bin/idea.properties
+      - install -D --mode=0644 --target-directory=/app/bin/ idea.properties
     sources:
       - type: file
         path: com.jetbrains.IntelliJ-IDEA-Community.desktop
