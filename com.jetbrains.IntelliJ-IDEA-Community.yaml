@@ -125,8 +125,8 @@ modules:
         path: idea.properties
       - type: file
         dest-filename: ideaIC.tar.gz
-        sha256: 0a9bc55c2eaecbe983cd1db9ab6a353e3b7c3747f6fc6dea95736df104a68239
-        url: https://download.jetbrains.com/idea/ideaIC-2023.1.1.tar.gz
+        sha256: f222f0282bebe2e8c3fef6a27b160c760c118e45a0cdb7c9053d645a8e00844a
+        url: https://download.jetbrains.com/idea/ideaIC-2023.1.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
