@@ -44,6 +44,41 @@ modules:
         sha256: 29df50974a90987af694c0fb8926a6b366e68cacd8abd813817cfe1eb5d54524
         url: https://download.gnome.org/sources/gcr/3.34/gcr-3.34.0.tar.xz
 
+  - name: idea
+    buildsystem: simple
+    build-commands:
+      - install --directory --mode=0755 /app/IDEA-C/
+      - tar --directory=/app/IDEA-C/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
+      - install -D --mode=0644 /app/IDEA-C/bin/idea.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - install -D --mode=0644 --target-directory=/app/share/applications/ ${FLATPAK_ID}.desktop
+      - install -D --mode=0644 --target-directory=/app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
+      - install -D --mode=0644 --target-directory=/app/bin/ idea.properties
+    sources:
+      - type: file
+        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
+      - type: file
+        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
+      - type: file
+        path: idea.properties
+      - type: file
+        dest-filename: ideaIC.tar.gz
+        only-arches:
+          - x86_64
+        sha256: 2a11cd6d8f245e4afb99286255e50b7b84a55dbbfaba3bdb7c0f7027803a0e8d
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1.tar.gz
+        x-checker-data:
+          code: IIC
+          type: jetbrains
+      - type: file
+        dest-filename: ideaIC.tar.gz
+        only-arches:
+          - aarch64
+        sha256: f9d5d8f361a0721426922cd65a91b050a46c846264d7347b1c0dc19b5252bb34
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1-aarch64.tar.gz
+        x-checker-data:
+          code: IIC
+          type: jetbrains
+
   - name: jetbrains-flatpak-wrapper
     buildsystem: meson
     config-opts:
@@ -107,42 +142,7 @@ modules:
           type: anitya
           url-template: https://download.samba.org/pub/rsync/src/rsync-$version.tar.gz
 
-  - name: idea
-    buildsystem: simple
-    build-commands:
-      - install --directory --mode=0755 /app/IDEA-C/
-      - tar --directory=/app/IDEA-C/ --extract --file=ideaIC.tar.gz --gunzip --strip-components=1
-      - install -D --mode=0644 /app/IDEA-C/bin/idea.svg /app/share/icons/hicolor/scalable/apps/com.jetbrains.IntelliJ-IDEA-Community.svg
-      - install -D --mode=0644 --target-directory=/app/share/applications/ com.jetbrains.IntelliJ-IDEA-Community.desktop
-      - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-      - install -D --mode=0644 --target-directory=/app/bin/ idea.properties
-    sources:
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.desktop
-      - type: file
-        path: com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml
-      - type: file
-        path: idea.properties
-      - type: file
-        dest-filename: ideaIC.tar.gz
-        sha256: 2a11cd6d8f245e4afb99286255e50b7b84a55dbbfaba3bdb7c0f7027803a0e8d
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1.tar.gz
-        only-arches:
-          - x86_64
-        x-checker-data:
-          code: IIC
-          type: jetbrains
-      - type: file
-        dest-filename: ideaIC.tar.gz
-        sha256: f9d5d8f361a0721426922cd65a91b050a46c846264d7347b1c0dc19b5252bb34
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1-aarch64.tar.gz
-        only-arches:
-          - aarch64
-        x-checker-data:
-          code: IIC
-          type: jetbrains
-
 runtime: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
