@@ -68,6 +68,7 @@ modules:
         url: https://download.jetbrains.com/idea/ideaIC-2023.2.2.tar.gz
         x-checker-data:
           code: IIC
+          is-main-source: true
           type: jetbrains
       - type: file
         dest-filename: ideaIC.tar.gz
@@ -77,6 +78,7 @@ modules:
         url: https://download.jetbrains.com/idea/ideaIC-2023.2.2-aarch64.tar.gz
         x-checker-data:
           code: IIC
+          is-main-source: true
           type: jetbrains
 
   - name: jetbrains-flatpak-wrapper
