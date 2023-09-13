@@ -64,8 +64,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - x86_64
-        sha256: 2a11cd6d8f245e4afb99286255e50b7b84a55dbbfaba3bdb7c0f7027803a0e8d
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1.tar.gz
+        sha256: cf647137394e27b3011072e463dc2e4bcdd54dc6ea9406e487a47648fc77bd26
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.2.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
@@ -73,8 +73,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - aarch64
-        sha256: f9d5d8f361a0721426922cd65a91b050a46c846264d7347b1c0dc19b5252bb34
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.1-aarch64.tar.gz
+        sha256: 15b9f046a11604eafd8dda48dcbc6e08fd60f1d71313e28fe590b6ab2556317b
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.2-aarch64.tar.gz
         x-checker-data:
           code: IIC
           type: jetbrains
