@@ -121,7 +121,8 @@ modules:
     buildsystem: simple
     build-commands:
       - install --directory --mode 0755 /app/IDEA-C/
-      - tar --directory /app/IDEA-C/ --extract --file ideaIC.tar.gz --gunzip --strip-components 1
+      - tar --directory /app/IDEA-C/ --extract --file ideaIC.tar.gz --gunzip --strip-components
+        1
       - install -D --mode 0644 --target-directory /app/bin/ idea.properties
       - install -D --mode 0644 --target-directory /app/share/applications/ ${FLATPAK_ID}.desktop
       - install -D --mode 0644 --target-directory /app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
@@ -137,8 +138,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - aarch64
-        sha256: 15b9f046a11604eafd8dda48dcbc6e08fd60f1d71313e28fe590b6ab2556317b
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.2-aarch64.tar.gz
+        sha256: 9e6402c323d74f9c88aaea13d0fb0027786a1ac3dbee232794d071132bf7a5ce
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.3-aarch64.tar.gz
         x-checker-data:
           code: IIC
           is-main-source: true
@@ -147,8 +148,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - x86_64
-        sha256: cf647137394e27b3011072e463dc2e4bcdd54dc6ea9406e487a47648fc77bd26
-        url: https://download.jetbrains.com/idea/ideaIC-2023.2.2.tar.gz
+        sha256: 4b34fdaabb5907656ac87d50df85f13ace804d8684f3886dac07f62a93706b2e
+        url: https://download.jetbrains.com/idea/ideaIC-2023.2.3.tar.gz
         x-checker-data:
           code: IIC
           is-main-source: true
