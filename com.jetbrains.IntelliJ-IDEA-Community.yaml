@@ -139,8 +139,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - aarch64
-        sha256: 0cd57862fd4045f1d719ae5c9ed6ee408d0715e8afb0e53cd84106cd54e520be
-        url: https://download.jetbrains.com/idea/ideaIC-2024.2-aarch64.tar.gz
+        sha256: 7406fc8ea5b8cf6716c84d5bc208d29bdc22c42e3c83d101f6314453bacfe7fc
+        url: https://download.jetbrains.com/idea/ideaIC-2024.2.0.1-aarch64.tar.gz
         x-checker-data:
           code: IIC
           is-main-source: true
@@ -149,8 +149,8 @@ modules:
         dest-filename: ideaIC.tar.gz
         only-arches:
           - x86_64
-        sha256: 70678d02fbba642b09c242a6453de4d79f411d1f6f029e357dfcd0da9ead871a
-        url: https://download.jetbrains.com/idea/ideaIC-2024.2.tar.gz
+        sha256: f6a6a1e5d1603a13a3f9a6d3921a16bed3e54fbe803fbf851630104216e2b674
+        url: https://download.jetbrains.com/idea/ideaIC-2024.2.0.1.tar.gz
         x-checker-data:
           code: IIC
           is-main-source: true
