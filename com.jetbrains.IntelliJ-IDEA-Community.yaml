@@ -14,7 +14,6 @@ finish-args:
   - --share=network
   - --socket=pulseaudio
   - --socket=ssh-auth
-  - --socket=wayland
   - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.Flatpak
@@ -116,6 +115,8 @@ modules:
           is-main-source: true
           type: jetbrains
 runtime: org.freedesktop.Sdk
-runtime-version: '23.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 separate-locales: false
+tags:
+  - proprietary
