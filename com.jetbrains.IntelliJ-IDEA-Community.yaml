@@ -49,7 +49,7 @@ modules:
   - name: jetbrains-flatpak-wrapper
     buildsystem: meson
     config-opts:
-      - -Deditor_binary=/app/IIC/bin/idea.sh
+      - -Deditor_binary=/app/IIC/bin/idea
       - -Deditor_title=IntelliJ IDEA Community
       - -Dprogram_name=idea
     sources:
