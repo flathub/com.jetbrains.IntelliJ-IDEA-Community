@@ -54,7 +54,7 @@
         },
         {
           "type": "extra-data",
-          "dest-filename": "ideaIC.tar.gz",
+          "filename": "ideaIC.tar.gz",
           "only-arches": [
             "x86_64"
           ],
