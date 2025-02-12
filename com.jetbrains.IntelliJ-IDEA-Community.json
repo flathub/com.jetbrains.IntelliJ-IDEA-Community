@@ -42,9 +42,9 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "sha256": "ffdf4a5bdf8ba88c7afdbcd777aee7ce4113af016f0a671fa8a7fe6703734c7f",
-                    "size": 988678759,
-                    "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.2.2-aarch64.tar.gz",
+                    "sha256": "9ce7e15135e97e92601654f456a6211127c165b35f62784886c4ec3b466af8f9",
+                    "size": 991739706,
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.3-aarch64.tar.gz",
                     "x-checker-data": {
                         "code": "IIC",
                         "is-main-source": true,
@@ -57,9 +57,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "sha256": "d73fd631943c300d55729bd33e06e193751478a83477153807cfa941e4bf12e5",
-                    "size": 988799613,
-                    "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.2.2.tar.gz",
+                    "sha256": "ae3c45fe515fef672f52ce5c4701bc40a5f82cb94f21fed2c6e66c22e3dc91db",
+                    "size": 991863832,
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2024.3.3.tar.gz",
                     "x-checker-data": {
                         "code": "IIC",
                         "is-main-source": true,
