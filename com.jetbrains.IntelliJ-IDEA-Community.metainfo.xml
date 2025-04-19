@@ -47,6 +47,7 @@
         <internet>offline-only</internet>
     </supports>
     <description>
+        <p>BETA branch enable Wayland Support Preview</p>
         <p>IntelliJ IDEA Community Edition is a free IDE built on open-source code that provides essential features for Java and Kotlin enthusiasts.</p>
         <p>NOTE: This wrapper is not verified by, affiliated with, or supported by JetBrains s.r.o.</p>
     </description>
