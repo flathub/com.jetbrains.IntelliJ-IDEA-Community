@@ -89,15 +89,15 @@
                         "rm ideaIC.tar.gz"
                     ],
                     "dest-filename": "apply_extra"
+                },
+                {
+                  "type": "script",
+                  "dest-filename": "idea-wrapper",
+                  "commands": [
+                    "/app/extra/idea-IC/bin/idea $@"
+                  ]
                 }
             ]
-        },
-        {
-          "type": "script",
-          "dest-filename": "idea-wrapper",
-          "commands": [
-            "/app/extra/idea-IC/bin/idea $@"
-          ]
         }
     ]
 }
