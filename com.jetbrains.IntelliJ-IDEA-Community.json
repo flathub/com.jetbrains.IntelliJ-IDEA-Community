@@ -1,7 +1,7 @@
 {
     "app-id": "com.jetbrains.IntelliJ-IDEA-Community",
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "idea-wrapper",
     "finish-args": [
@@ -12,7 +12,7 @@
         "--share=network",
         "--device=all",
         "--filesystem=home",
-        "--env=JAVA_HOME=/app/extra/idea-IC/jbr",
+        "--env=JAVA_HOME=/app/extra/jbr",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.secrets",
         "--env=IDEA_PROPERTIES=/app/bin/idea.properties",
@@ -28,8 +28,7 @@
         {
             "name": "idea",
             "build-commands": [
-                "install -D apply_extra ${FLATPAK_DEST}/bin/apply_extra",
-                "install -Dm644 -t ${FLATPAK_DEST}/bin/ idea.properties",
+                "install -D -t ${FLATPAK_DEST}/bin/ apply_extra idea-wrapper idea.properties",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg"
@@ -38,7 +37,7 @@
             "sources": [
                 {
                     "type": "extra-data",
-                    "filename": "ideaIC.tar.gz",
+                    "filename": "idea.tar.gz",
                     "only-arches": [
                         "aarch64"
                     ],
@@ -53,7 +52,7 @@
                 },
                 {
                     "type": "extra-data",
-                    "filename": "ideaIC.tar.gz",
+                    "filename": "idea.tar.gz",
                     "only-arches": [
                         "x86_64"
                     ],
@@ -84,35 +83,20 @@
                 },
                 {
                     "type": "script",
+                    "dest-filename": "apply_extra",
                     "commands": [
-                        "tar xzf ideaIC.tar.gz --one-top-level=idea-IC --strip-components=1",
-                        "rm ideaIC.tar.gz"
-                    ],
-                    "dest-filename": "apply_extra"
-                }
-            ]
-        },
-        {
-            "name": "ide-flatpak-wrapper",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Deditor_binary=/app/extra/idea-IC/bin/idea",
-                "-Deditor_title=IntelliJ IDEA Community",
-                "-Dprogram_name=idea-wrapper",
-                "-Dfirst_run_template=README.md",
-                "-Dflagfile_prefix=flatpak-idea"
-            ],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "ide-flatpak-wrapper"
+                        "tar xzf idea.tar.gz --strip-components=1",
+                        "rm idea.tar.gz"
+                    ]
                 },
                 {
-                    "type": "file",
-                    "path": "README.md"
+                    "type": "script",
+                    "dest-filename": "idea-wrapper",
+                    "commands": [
+                        "/app/extra/bin/idea $@"
+                    ]
                 }
             ]
-        },
-        "shared-modules/libsecret/libsecret.json"
+        }
     ]
 }
