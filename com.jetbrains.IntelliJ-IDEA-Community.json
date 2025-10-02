@@ -41,9 +41,9 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "sha256": "3ea855820772e36be4b37dd9e503e4fee9b1877dcb614b5baa36819370fa0208",
-                    "size": 1212051768,
-                    "url": "https://download.jetbrains.com/idea/ideaIC-2025.2.2-aarch64.tar.gz",
+                    "sha256": "f51d2e9428a7d9c3999cc9dfab5fbcccba73d894098724cc5e35865a21932090",
+                    "size": 1209329354,
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2025.2.3-aarch64.tar.gz",
                     "x-checker-data": {
                         "code": "IIC",
                         "is-main-source": true,
@@ -56,9 +56,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "sha256": "3f1adc095bf78f0949e3f62f6cf02be0c5c9e6528271f16caa3baa041e637664",
-                    "size": 1214589812,
-                    "url": "https://download.jetbrains.com/idea/ideaIC-2025.2.2.tar.gz",
+                    "sha256": "6b7c671e97b1419ca22ff4c4a32e7ca51577e4177589bfd321bd9a26df16c9ba",
+                    "size": 1211852257,
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2025.2.3.tar.gz",
                     "x-checker-data": {
                         "code": "IIC",
                         "is-main-source": true,
