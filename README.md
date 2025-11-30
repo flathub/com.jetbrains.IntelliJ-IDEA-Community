@@ -54,3 +54,19 @@ To make this persistent, set the variable via flatpak override:
 You can use to find others
 
 `$ flatpak search <TEXT>`
+
+## Wayland support
+
+IntelliJ IDEA has Wayland support.
+
+Wayland support can be enabled using command line:
+
+```bash
+flatpak override --user --socket=wayland com.jetbrains.IntelliJ-IDEA-Community
+```
+
+Then add to VM options (`Help | Edit Custom VM Options...`):
+
+```bash
+-Dawt.toolkit.name=WLToolkit
+```
