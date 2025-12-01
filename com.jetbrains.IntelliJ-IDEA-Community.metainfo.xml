@@ -51,6 +51,7 @@
         <p>The development of modern applications involves using multiple languages, tools, frameworks, and technologies. IntelliJ IDEA is designed as an IDE for JVM languages, but numerous plugins can extend it to provide a polyglot experience.</p>
         <p>Use IntelliJ IDEA to develop applications in the following languages that can be compiled into the JVM bytecode, namely: Java, Kotlin, Scala and Groovy</p>
         <p>IntelliJ IDEA Community Edition is a free IDE built on open-source code that provides essential features for Java and Kotlin enthusiasts.</p>
+        <p>BETA branch enable Wayland Preview Support</p>
     </description>
     <screenshots>
         <screenshot type="default">

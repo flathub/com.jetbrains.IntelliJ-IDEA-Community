@@ -54,3 +54,9 @@ To make this persistent, set the variable via flatpak override:
 You can use to find others
 
 `$ flatpak search <TEXT>`
+
+## Wayland Support Preview
+
+IntelliJ IDEA supports Wayland in a preview state, beta branch enable it
+
+https://blog.jetbrains.com/platform/2024/07/wayland-support-preview-in-2024-2/
