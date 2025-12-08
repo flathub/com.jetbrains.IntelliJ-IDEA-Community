@@ -2,5 +2,7 @@
   "only-arches": [
     "x86_64",
     "aarch64"
-  ]
+  ],
+  "end-of-life": "IntelliJ IDEA is now a single, unified product.",
+  "end-of-life-rebase": "com.jetbrains.IntelliJ-IDEA-Ultimate"
 }
