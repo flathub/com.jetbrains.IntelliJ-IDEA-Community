@@ -42,7 +42,8 @@
                         "aarch64"
                     ],
                     "sha256": "7856e9971e884f8fe254f8c2142e3a5281702ab0e67b20a3399adb9890eb7c01",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea%2F2025.3/idea-2025.3-aarch64.tar.gz"
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea%2F2025.3/idea-2025.3-aarch64.tar.gz",
+                    "size": 833525853
                 },
                 {
                     "type": "extra-data",
@@ -51,7 +52,8 @@
                         "x86_64"
                     ],
                     "sha256": "057a6bf358e9e5beb34519137be2c985714c1bc90d4f9bf17adbb79ee3a8e1c4",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea%2F2025.3/idea-2025.3.tar.gz"
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea%2F2025.3/idea-2025.3.tar.gz",
+                    "size": 836332527
                 },
                 {
                     "type": "file",
