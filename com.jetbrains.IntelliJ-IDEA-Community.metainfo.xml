@@ -136,21 +136,5 @@
                 </ul>
             </description>
         </release>
-        <release version="2025.2.2" date="2025-09-19">
-            <url type="details">https://blog.jetbrains.com/idea/2025/08/intellij-idea-2025-2-2/</url>
-            <description>
-                <ul>
-                    <li>The Run Maven Build icon is once again available in the Maven panel toolbar.</li>
-                    <li>Remote SSH external tools now work as expected.</li>
-                    <li>The IDE again correctly parses environment variables with semicolon values pasted in the Run/Debug dialog.</li>
-                    <li>The IDE now properly handles MAVEN_OPTS environment variables.</li>
-                    <li>On Windows, the Find in Files dialog again works as expected, closes correctly, and no longer shows a persistent green area.</li>
-                    <li>Several issues with the terminal and WSL have been fixed.</li>
-                    <li>The terminal now starts correctly and works as expected on Windows 10.</li>
-                    <li>It is once again possible to switch between split editors using the Switch popup.</li>
-                    <li>The distributionUrl for Gradle 9 now contains the proper version when creating a new project, preventing sync failures.</li>
-                </ul>
-            </description>
-        </release>
     </releases>
 </component>
