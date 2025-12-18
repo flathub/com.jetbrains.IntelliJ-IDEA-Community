@@ -53,7 +53,15 @@
                     ],
                     "sha256": "057a6bf358e9e5beb34519137be2c985714c1bc90d4f9bf17adbb79ee3a8e1c4",
                     "url": "https://github.com/JetBrains/intellij-community/releases/download/idea%2F2025.3/idea-2025.3.tar.gz",
-                    "size": 836332527
+                    "size": 836332527,
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
+                        "version-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).tag_name | sub(\"^idea/\"; \"\")",
+                        "url-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).assets[] | select(.name==\"idea-\" + $version + \".tar.gz\") | .browser_download_url",
+                        "is-main-source": true,
+                        "timestamp-query": ".published_at"
+                    }
                 },
                 {
                     "type": "file",
