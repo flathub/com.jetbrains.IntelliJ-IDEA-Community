@@ -41,9 +41,9 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "sha256": "a4cc15e292f8f9a643f9ac1e48e72e59e9df2bbc280f8365d3c4ba44db37f0d6",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.1.1/idea-2025.3.1.1-aarch64.tar.gz",
-                    "size": 833153337,
+                    "sha256": "e578e0112da47fd183b7f2364700d39699668e947a7b03a6fd1f2ab6b01e507f",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.2/idea-2025.3.2-aarch64.tar.gz",
+                    "size": 833599664,
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -58,9 +58,9 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "sha256": "3093c7bbaae361f0f7024be2b7b032225abb897bcc9e37ac5e4cc0484d4007eb",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.1.1/idea-2025.3.1.1.tar.gz",
-                    "size": 835975558,
+                    "sha256": "b875e511bdee5f3fd9f5bd95b5318d0b26d0547cf96731939486a697f019b97a",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.2/idea-2025.3.2.tar.gz",
+                    "size": 836358175,
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -100,7 +100,7 @@
             "buildsystem": "meson",
             "config-opts": [
                 "-Deditor_binary=/app/extra/bin/idea",
-                "-Deditor_title=IntelliJ IDEA Community",
+                "-Deditor_title=IntelliJ IDEA Open",
                 "-Dprogram_name=idea-wrapper",
                 "-Dfirst_run_template=README.md",
                 "-Dflagfile_prefix=flatpak-idea"
