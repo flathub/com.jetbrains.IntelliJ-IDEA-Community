@@ -109,7 +109,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
-                    "branch": "master"
+                    "commit": "d581fd9b873acbf6fb22899aa388435f6c00f61a"
                 },
                 {
                     "type": "file",
