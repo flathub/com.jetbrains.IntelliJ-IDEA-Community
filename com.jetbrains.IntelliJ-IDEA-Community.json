@@ -6,7 +6,7 @@
     "command": "idea-wrapper",
     "finish-args": [
         "--device=all",
-        "--env=JAVA_HOME=/app/extra/jbr",
+        "--env=JAVA_HOME=/app/jbr",
         "--filesystem=home",
         "--filesystem=xdg-run/app/com.discordapp.Discord:create",
         "--filesystem=xdg-run/docker",
@@ -27,7 +27,7 @@
         {
             "name": "idea",
             "build-commands": [
-                "cp -rv . ${FLATPAK_DEST}",
+                "cp -a idea-*/* {FLATPAK_DEST}",
                 "install -D -t ${FLATPAK_DEST}/bin/ idea.properties",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
@@ -37,7 +37,6 @@
             "sources": [
                 {
                     "type": "archive",
-                    "strip-components": 1,
                     "only-arches": [
                         "aarch64"
                     ],
@@ -53,7 +52,6 @@
                 },
                 {
                     "type": "archive",
-                    "strip-components": 1,
                     "only-arches": [
                         "x86_64"
                     ],
