@@ -27,8 +27,8 @@
         {
             "name": "idea",
             "build-commands": [
-                "cp -a idea-*/* {FLATPAK_DEST}",
-                "install -D -t ${FLATPAK_DEST}/bin/ idea.properties",
+                "cp -a idea-*/* ${FLATPAK_DEST}",
+                "cat idea.properties >> ${FLATPAK_DEST}/bin/idea.properties",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg"
@@ -37,6 +37,7 @@
             "sources": [
                 {
                     "type": "archive",
+                    "strip-components": 0,
                     "only-arches": [
                         "aarch64"
                     ],
@@ -52,6 +53,7 @@
                 },
                 {
                     "type": "archive",
+                    "strip-components": 0,
                     "only-arches": [
                         "x86_64"
                     ],
