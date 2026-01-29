@@ -89,7 +89,7 @@
             "name": "ide-flatpak-wrapper",
             "buildsystem": "meson",
             "config-opts": [
-                "-Deditor_binary=/app/extra/bin/idea",
+                "-Deditor_binary=/app/files/bin/idea",
                 "-Deditor_title=IntelliJ IDEA Open",
                 "-Dprogram_name=idea-wrapper",
                 "-Dfirst_run_template=README.md",
