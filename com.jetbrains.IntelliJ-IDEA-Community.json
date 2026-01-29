@@ -6,7 +6,6 @@
     "command": "idea-wrapper",
     "finish-args": [
         "--device=all",
-        "--env=IDEA_PROPERTIES=/app/bin/idea.properties",
         "--env=JAVA_HOME=/app/extra/jbr",
         "--filesystem=home",
         "--filesystem=xdg-run/app/com.discordapp.Discord:create",
@@ -90,7 +89,7 @@
             "name": "ide-flatpak-wrapper",
             "buildsystem": "meson",
             "config-opts": [
-                "-Deditor_binary=/app/files/bin/idea",
+                "-Deditor_binary=/app/bin/idea",
                 "-Deditor_title=IntelliJ IDEA Open",
                 "-Dprogram_name=idea-wrapper",
                 "-Dfirst_run_template=README.md",
