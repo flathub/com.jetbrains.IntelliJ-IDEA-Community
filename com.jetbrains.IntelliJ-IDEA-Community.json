@@ -6,8 +6,7 @@
     "command": "idea-wrapper",
     "finish-args": [
         "--device=all",
-        "--env=IDEA_PROPERTIES=/app/bin/idea.properties",
-        "--env=JAVA_HOME=/app/extra/jbr",
+        "--env=JAVA_HOME=/app/jbr",
         "--filesystem=home",
         "--filesystem=xdg-run/app/com.discordapp.Discord:create",
         "--filesystem=xdg-run/docker",
@@ -28,7 +27,8 @@
         {
             "name": "idea",
             "build-commands": [
-                "install -D -t ${FLATPAK_DEST}/bin/ apply_extra idea.properties",
+                "cp -a idea-*/* ${FLATPAK_DEST}",
+                "cat idea.properties >> ${FLATPAK_DEST}/bin/idea.properties",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg"
@@ -36,14 +36,13 @@
             "buildsystem": "simple",
             "sources": [
                 {
-                    "type": "extra-data",
-                    "filename": "idea.tar.gz",
+                    "type": "archive",
+                    "strip-components": 0,
                     "only-arches": [
                         "aarch64"
                     ],
                     "sha256": "e578e0112da47fd183b7f2364700d39699668e947a7b03a6fd1f2ab6b01e507f",
                     "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.2/idea-2025.3.2-aarch64.tar.gz",
-                    "size": 833599664,
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -53,14 +52,13 @@
                     }
                 },
                 {
-                    "type": "extra-data",
-                    "filename": "idea.tar.gz",
+                    "type": "archive",
+                    "strip-components": 0,
                     "only-arches": [
                         "x86_64"
                     ],
                     "sha256": "b875e511bdee5f3fd9f5bd95b5318d0b26d0547cf96731939486a697f019b97a",
                     "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.2/idea-2025.3.2.tar.gz",
-                    "size": 836358175,
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -84,14 +82,6 @@
                 {
                     "type": "file",
                     "path": "com.jetbrains.IntelliJ-IDEA-Community.svg"
-                },
-                {
-                    "type": "script",
-                    "dest-filename": "apply_extra",
-                    "commands": [
-                        "tar xzf idea.tar.gz --strip-components=1",
-                        "rm idea.tar.gz"
-                    ]
                 }
             ]
         },
@@ -99,7 +89,7 @@
             "name": "ide-flatpak-wrapper",
             "buildsystem": "meson",
             "config-opts": [
-                "-Deditor_binary=/app/extra/bin/idea",
+                "-Deditor_binary=/app/bin/idea",
                 "-Deditor_title=IntelliJ IDEA Open",
                 "-Dprogram_name=idea-wrapper",
                 "-Dfirst_run_template=README.md",
