@@ -20,7 +20,7 @@
     </content_rating>
     <branding>
         <color scheme_preference="light" type="primary">#fe2857</color>
-        <color scheme_preference="dark" type="primary">#0c7af7</color>
+        <color scheme_preference="dark" type="primary">#007eff</color>
     </branding>
     <categories>
         <category>Development</category>
