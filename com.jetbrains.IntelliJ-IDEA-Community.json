@@ -41,8 +41,8 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "sha256": "ffabcf40aa54dac9d80133ce8beca8c748f537e95977fe60fb3c99e72a87c6ae",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.3/idea-2025.3.3-aarch64.tar.gz",
+                    "sha256": "1bf7c1e6b99caf77f145814aabd5a08dae80d0da734785081bae6bd1cfa1f260",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.4/idea-2025.3.4-aarch64.tar.gz",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -57,8 +57,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "sha256": "7d970447ffa56b3d646971da5aac4f9caafb981ce0f21a131389980c0406d5a5",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.3/idea-2025.3.3.tar.gz",
+                    "sha256": "ddc3fadf1bb59b98cf638726dc269d85a994e93f85b3fe0772d5c8212460108f",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2025.3.4/idea-2025.3.4.tar.gz",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
