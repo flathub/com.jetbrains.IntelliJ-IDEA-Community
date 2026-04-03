@@ -98,7 +98,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
-                    "commit": "d581fd9b873acbf6fb22899aa388435f6c00f61a"
+                    "commit": "2881abaf9efc6e14923b8a0bb085275aaf2fbddf"
                 },
                 {
                     "type": "file",

@@ -36,6 +36,7 @@ $ ls /app/bin (bundled with this flatpak)
 To get support for additional languages, you have to install SDK extensions, e. g.
 ```
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk
+$ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk25
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk21
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk17
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk11
