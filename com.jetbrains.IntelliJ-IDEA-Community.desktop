@@ -4,6 +4,7 @@ Exec=idea-wrapper %F
 GenericName=Capable and Ergonomic Java IDE
 Icon=com.jetbrains.IntelliJ-IDEA-Community
 Keywords=development;idea;ide;intellij;java;
+MimeType=text/plain;inode/directory;
 Name=IntelliJ IDEA Open
 StartupNotify=true
 StartupWMClass=jetbrains-idea-ce
