@@ -77,30 +77,18 @@
     </screenshots>
     <releases>
         <release version="2026.1.1" date="2026-04-23">
-            <url type="details">https://youtrack.jetbrains.com/articles/IDEA-A-2100662664/IntelliJ-IDEA-2026.1.1-261.23567.138-build-Release-Notes</url>
+            <url type="details">https://blog.jetbrains.com/idea/2026/04/intellij-idea-2026-1-1/</url>
             <description>
                 <ul>
-                    <li>Apply plugins using the plugins block inspection</li>
-                    <li>Suggest moving Dependency Repositories to the Settings file</li>
-                    <li>Avoid Redundant Dependency Declarations</li>
-                    <li>Describe custom Tasks inspection</li>
-                    <li>Report duplicate repositories in Gradle scripts</li>
-                    <li>Add JSpecify usage to statistics</li>
-                    <li>Implement conditional breakpoints via instrumentation</li>
-                    <li>WebStorm SPTE for vue ls 3.0</li>
-                    <li>Enable --strict by default</li>
-                    <li>React Add Ability To Extract Component To Its Own File</li>
-                    <li>Svelte: improve support for namespaced components</li>
-                    <li>Svelte 5: TypeScript in markup expressions</li>
-                    <li>Support DATABASE ROLE syntax in Snowflake</li>
-                    <li>Move Color Settings to the Large Settings Dialog</li>
-                    <li>LSP: support LSP server-based symbol rename (textDocument/rename request)</li>
-                    <li>Allow automatic reporting of exceptions for remote development</li>
-                    <li>When using an HTTP proxy, the IDE should prompt to re-enter authentication credentials if the proxy server returns a 407 status code</li>
-                    <li>[MCP Server] Run tests tool</li>
-                    <li>Keep the project name after switching from Java to Kotlin project</li>
-                    <li>Name-based destructuring: migration for data classes</li>
-                    <li>Slim button</li>
+                    <li>It’s once again possible to set up a WSL Python SDK.</li>
+                    <li>Emmet in remote development now works as expected.</li>
+                    <li>Gradle sync no longer fails due to a class cast error involving InternalIdeaModule and org.gradle.tooling.model.ProjectModel.</li>
+                    <li>The IDE now correctly connects to the WildFly admin process after server startup, restoring deployment and the Open browser after launch option.</li>
+                    <li>The IDE no longer fails to locate the WSL 2 JDK.</li>
+                    <li>Double-clicking an Ant target in the Ant tool window now runs the target and shows the build output in the Messages tool window.</li>
+                    <li>Search for context actions and code completion in large Spring projects are now more responsive and faster.</li>
+                    <li>The IDE now correctly supports creating a run configuration for a local WebLogic server.</li>
+                    <li>The Find and Replace action now works as expected when pressing Enter.</li>
                 </ul>
             </description>
         </release>
