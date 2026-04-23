@@ -77,7 +77,32 @@
     </screenshots>
     <releases>
         <release version="2026.1.1" date="2026-04-23">
-            <description></description>
+            <url type="details">https://youtrack.jetbrains.com/articles/IDEA-A-2100662664/IntelliJ-IDEA-2026.1.1-261.23567.138-build-Release-Notes</url>
+            <description>
+                <ul>
+                    <li>Apply plugins using the plugins block inspection</li>
+                    <li>Suggest moving Dependency Repositories to the Settings file</li>
+                    <li>Avoid Redundant Dependency Declarations</li>
+                    <li>Describe custom Tasks inspection</li>
+                    <li>Report duplicate repositories in Gradle scripts</li>
+                    <li>Add JSpecify usage to statistics</li>
+                    <li>Implement conditional breakpoints via instrumentation</li>
+                    <li>WebStorm SPTE for vue ls 3.0</li>
+                    <li>Enable --strict by default</li>
+                    <li>React Add Ability To Extract Component To Its Own File</li>
+                    <li>Svelte: improve support for namespaced components</li>
+                    <li>Svelte 5: TypeScript in markup expressions</li>
+                    <li>Support DATABASE ROLE syntax in Snowflake</li>
+                    <li>Move Color Settings to the Large Settings Dialog</li>
+                    <li>LSP: support LSP server-based symbol rename (textDocument/rename request)</li>
+                    <li>Allow automatic reporting of exceptions for remote development</li>
+                    <li>When using an HTTP proxy, the IDE should prompt to re-enter authentication credentials if the proxy server returns a 407 status code</li>
+                    <li>[MCP Server] Run tests tool</li>
+                    <li>Keep the project name after switching from Java to Kotlin project</li>
+                    <li>Name-based destructuring: migration for data classes</li>
+                    <li>Slim button</li>
+                </ul>
+            </description>
         </release>
         <release version="2026.1" date="2026-03-25">
             <url type="details">https://blog.jetbrains.com/idea/2026/03/intellij-idea-2026-1/</url>
@@ -127,20 +152,6 @@
                     <li>The Terminal tool window no longer flickers when you use CLI tools with synchronized output, such as Claude Code.</li>
                     <li>Several issues related to credential storage and settings synchronization in remote development have been resolved</li>
                     <li>Run configuration handling in the Services tool window has received multiple improvements</li>
-                </ul>
-            </description>
-        </release>
-        <release version="2025.3.1" date="2025-12-18">
-            <url type="details">https://blog.jetbrains.com/idea/2025/12/intellij-idea-2025-3-1/</url>
-            <description>
-                <ul>
-                    <li>The IDE once again shows the Resume Build From button in the Run tool window for Maven projects.</li>
-                    <li>In the Version Control section of Advanced Settings, there’s now an option to disable the warning dialog on force-pushing.</li>
-                    <li>Query result tabs now follow the corresponding active editor tabs as expected.</li>
-                    <li>Several issues that appeared when running or debugging in WSL using Gradle have been resolved.</li>
-                    <li>The IDE no longer shifts mouse text selection in the terminal one character to the left of the cursor position.</li>
-                    <li>The IDE once again correctly loads the list of suggested plugins invoked by the Configure Plugins action.</li>
-                    <li>The IDE no longer displays a stray = character in the terminal when working with Fish shell versions 4.0.0–4.0.9 in Docker or when opening a terminal tab via a new SSH session.</li>
                 </ul>
             </description>
         </release>
