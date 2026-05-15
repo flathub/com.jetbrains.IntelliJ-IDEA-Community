@@ -40,8 +40,8 @@
                     "only-arches": [
                         "aarch64"
                     ],
-                    "sha256": "7aab7c3a656d42d1b8a605115c79cc98186cb070aba3e84b7391155d90ee1cb6",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.1/idea-2026.1.1-aarch64.tar.gz",
+                    "sha256": "6a322f0da045399e184f46a1a9466e05cbcec2481aa7344237f786c8473da75f",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.2/idea-2026.1.2-aarch64.tar.gz",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
@@ -56,8 +56,8 @@
                     "only-arches": [
                         "x86_64"
                     ],
-                    "sha256": "025253053e90f196a98df066561896e920c0cb1e768e391002bd7d47cbcfaa15",
-                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.1/idea-2026.1.1.tar.gz",
+                    "sha256": "9046a442373ef3cc4d9ff7db17a64003b7f66435c5e05b47e5c217c3b2e1a78a",
+                    "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.2/idea-2026.1.2.tar.gz",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
