@@ -1,10 +1,10 @@
-# @EDITOR_TITLE@ unofficial Flatpak wrapper
+# IntelliJ IDEA unofficial Flatpak wrapper
 This version is running inside a container and is therefore not able  to access SDKs on your host system!
 
 ## How to run commands on the host system
-To execute commands on the host system, run @EDITOR_TITLE@ with:
+To execute commands on the host system, run IntelliJ IDEA with:
 
-`$ flatpak run --talk-name=org.freedesktop.Flatpak @FLATPAK_ID@`
+`$ flatpak run --talk-name=org.freedesktop.Flatpak com.jetbrains.IntelliJ-IDEA-Community`
 
 And this inside the sandbox:
 
@@ -16,7 +16,7 @@ This is are considered a security issue, use at your risk.
 
 To make it permanent
 
-`$ flatpak override --user < --talk-name=org.freedesktop.Flatpak @FLATPAK_ID@`
+`$ flatpak override --user < --talk-name=org.freedesktop.Flatpak com.jetbrains.IntelliJ-IDEA-Community`
 
 To make the Integrated Terminal automatically use the host system's shell,
 you can modify `Settings > Tools > Terminal > Shell path` to
@@ -24,16 +24,24 @@ you can modify `Settings > Tools > Terminal > Shell path` to
 `/usr/bin/env -- flatpak-spawn --host bash`
 
 ## Flatpak standard SDK
-This flatpak provides a standard development environment (gcc, python, etc).
+This Flatpak provides a standard development environment (gcc, python, etc.).
 To see what's available:
 ```
-$ flatpak run --command=sh @FLATPAK_ID@
+$ flatpak run --command=sh com.jetbrains.IntelliJ-IDEA-Community
 $ ls /usr/bin (shared runtime)
 $ ls /app/bin (bundled with this flatpak)
 ```
 
+## Running GUI app from IDE
+By default, java uses X11 but not exist inside Flatpak there is only Wayland.
+You need to switch to Wayland toolkit for your app.
+Go to `Edit Configuration`, `Modify options` and enable `Add VM Options`.
+On the new box named `VM Options` add:
+
+`-Dawt.toolkit.name=WLToolkit`
+
 ## Flatpak extensions
-To get support for additional languages, you have to install SDK extensions, e. g.
+To get support for additional languages, you have to install SDK extensions, e.g.
 ```
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk
 $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk25
@@ -46,18 +54,12 @@ $ flatpak install flathub org.freedesktop.Sdk.Extension.openjdk8
 To enable selected extensions, set `FLATPAK_ENABLE_SDK_EXT` environment variable
 to a comma-separated list of extension names (name is ID portion after the last dot):
 
-`$ FLATPAK_ENABLE_SDK_EXT=openjdk,xxx flatpak run @FLATPAK_ID@`
+`$ FLATPAK_ENABLE_SDK_EXT=openjdk,xxx flatpak run com.jetbrains.IntelliJ-IDEA-Community`
 
-To make this persistent, set the variable via flatpak override:
+To make this persistent, set the variable via Flatpak override:
 
-`$ flatpak override --user @FLATPAK_ID@ --env=FLATPAK_ENABLE_SDK_EXT="dotnet,golang"`
+`$ flatpak override --user com.jetbrains.IntelliJ-IDEA-Community --env=FLATPAK_ENABLE_SDK_EXT="dotnet,golang"`
 
 You can use to find others
 
 `$ flatpak search <TEXT>`
-
-## Wayland Support Preview
-
-IntelliJ IDEA supports Wayland in a preview state, beta branch enable it
-
-https://blog.jetbrains.com/platform/2024/07/wayland-support-preview-in-2024-2/
