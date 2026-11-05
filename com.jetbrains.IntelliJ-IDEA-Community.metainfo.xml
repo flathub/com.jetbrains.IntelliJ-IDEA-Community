@@ -76,8 +76,26 @@
     </screenshots>
     <releases>
         <release version="2026.3" date="2026-11-04">
-            <url type="details">https://github.com/JetBrains/intellij-community/releases/tag/idea/2026.3</url>
-            <description></description>
+            <url type="details">https://www.jetbrains.com/idea/whatsnew/2026-3/</url>
+            <description>
+                <ul>
+                    <li>JetBrains Air</li>
+                    <li>Java and Kotlin for Cursor and VS Code</li>
+                    <li>Debugging improvements</li>
+                    <li>Quick edits without opening a project</li>
+                    <li>Support for the latest technologies</li>
+                    <li>Sound cues</li>
+                    <li>Git worktrees</li>
+                    <li>Agentic workflows</li>
+                    <li>Databases</li>
+                    <li>Connect any language server</li>
+                    <li>Remote development</li>
+                    <li>Terminal powered by libghostty</li>
+                    <li>Terminal tabs in the editor</li>
+                    <li>Files in Kubernetes pods</li>
+                    <li>Performance and quality</li>
+                </ul>
+            </description>
         </release>
         <release version="2026.2.4" date="2026-10-30">
             <url type="details">https://blog.jetbrains.com/idea/2026/10/intellij-idea-2026-2-4</url>
@@ -135,26 +153,6 @@
                     <li>Support sized images in Markdown renderer</li>
                     <li>Update JDialogRenderer to Support Custom Window Shape</li>
                     <li>Add support for macOS scrollbar settings detection on standalone</li>
-                </ul>
-            </description>
-        </release>
-        <release version="2026.2" date="2026-07-16">
-            <url type="details">https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/</url>
-            <description>
-                <ul>
-                    <li>Native GitHub Copilot integration</li>
-                    <li>Agent skills</li>
-                    <li>AI completion support for third-party providers</li>
-                    <li>Logpoints</li>
-                    <li>Dependency completion</li>
-                    <li>Early Gradle 10 support and migration assistance</li>
-                    <li>Streamlined Git conflict resolution flow</li>
-                    <li>Docker Compose improvements</li>
-                    <li>Java 27</li>
-                    <li>Kotlin 2.4 Stable features</li>
-                    <li>Spring support improvements</li>
-                    <li>Terraform testing framework</li>
-                    <li>TypeScript 7.0</li>
                 </ul>
             </description>
         </release>
