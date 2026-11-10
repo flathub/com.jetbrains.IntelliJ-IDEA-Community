@@ -105,7 +105,7 @@
             "buildsystem": "meson",
             "config-opts": [
                 "-Deditor_binary=/app/bin/idea",
-                "-Deditor_title=IntelliJ IDEA Open",
+                "-Deditor_title=IntelliJ IDEA OSS",
                 "-Dprogram_name=idea-wrapper",
                 "-Dfirst_run_template=README.md",
                 "-Dflagfile_prefix=flatpak-idea"
