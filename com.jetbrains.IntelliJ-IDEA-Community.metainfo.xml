@@ -6,7 +6,7 @@
     <name>IntelliJ IDEA OSS</name>
     <launchable type="desktop-id">com.jetbrains.IntelliJ-IDEA-Community.desktop</launchable>
     <update_contact>community-support@jetbrains.com</update_contact>
-    <summary>Java and Kotlin IDE for you and your agents</summary>
+    <summary>Java and Kotlin IDE</summary>
     <url type="bugtracker">https://youtrack.jetbrains.com/issues/IDEA/</url>
     <url type="help">https://www.jetbrains.com/help/idea</url>
     <url type="homepage">https://www.jetbrains.com/idea/</url>
