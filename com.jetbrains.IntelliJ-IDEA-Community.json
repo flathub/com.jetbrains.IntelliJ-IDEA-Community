@@ -36,10 +36,9 @@
                     "sha256": "d5f157267b4e60c3c335d2e518e0eb5eaa195ef8de7da7f14ecc8211393c9542",
                     "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.3/idea-2026.3-aarch64.tar.gz",
                     "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
-                        "version-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).tag_name | sub(\"^idea/\"; \"\")",
-                        "url-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).assets[] | select(.name==\"idea-\" + $version + \"-aarch64.tar.gz\") | .browser_download_url",
+                        "type": "jetbrains",
+                        "code": "IIC",
+                        "oss": true,
                         "is-main-source": true
                     }
                 },
@@ -52,10 +51,9 @@
                     "sha256": "c9eb3aacbe1467f2bfaf5de85c3f340dd68ba967931cb200dc98cdc1be824fe3",
                     "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.3/idea-2026.3.tar.gz",
                     "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
-                        "version-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).tag_name | sub(\"^idea/\"; \"\")",
-                        "url-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).assets[] | select(.name==\"idea-\" + $version + \".tar.gz\") | .browser_download_url",
+                        "type": "jetbrains",
+                        "code": "IIC",
+                        "oss": true,
                         "is-main-source": true
                     }
                 },
